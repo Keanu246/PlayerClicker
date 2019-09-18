@@ -21,6 +21,6 @@ function buyBalon(){
 
 window.setInterval(function(){
 	
-	footballClick(balon);
+	footballClick(balontelli);
 	
 }, 5000);
