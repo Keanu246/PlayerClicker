@@ -5,14 +5,14 @@ function footballClick(number){
     document.getElementById("footballs").innerHTML = footballs;
 };
 
-var balon = 0;
+var balontelli = 0;
 
 function buyBalon(){
-    var balonCost = Math.floor(15 * Math.pow(1.15,balon));     //works out the cost of this cursor
+    var balonCost = Math.floor(15 * Math.pow(1.15,balontelli));     //works out the cost of this cursor
     if(footballs >= balonCost){                                   //checks that the player can afford the cursor
-        balon = balon + 1;                                   //increases number of cursors
+        balontelli = balontelli + 1;                                   //increases number of cursors
     	footballs = footballs - balonCost;                          //removes the cookies spent
-        document.getElementById('balon').innerHTML = balon;  //updates the number of cursors for the user
+        document.getElementById('balontelli').innerHTML = balontellitelli;  //updates the number of cursors for the user
         document.getElementById('footballs').innerHTML = footballs;  //updates the number of cookies for the user
     };
     var nextCost = Math.floor(15 * Math.pow(1.15,balon));       //works out the cost of the next cursor
