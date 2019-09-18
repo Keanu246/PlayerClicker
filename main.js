@@ -5,7 +5,7 @@ function footballClick(number){
     document.getElementById("footballs").innerHTML = footballs;
 };
 
-var cursors = 0;
+var balontelli = 0;
 
 function buyBalon(){
     var balonCost = Math.floor(15 * Math.pow(1.15,balontelli));     //works out the cost of this cursor
