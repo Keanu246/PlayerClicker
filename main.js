@@ -19,18 +19,8 @@ function buyBalon(){
     document.getElementById('balonCost').innerHTML = nextCost;  //updates the cursor cost for the user
 };
 
-function balonFootballs(){
-    var balonKicks = Math.floor(1 * Math.pow(1.08,balontelli));
-    if(footballs >= balonKicks){
-       footballs = footballs - balonKicks;
-       document.getElementById('balonKicks').innerHTML = balonKicks;
-       document.getElementById('balontelli').innerHTML = balontelli;
-       document.getElementById('footballs').innerHTML = footballs;
-    };
-};
-
 window.setInterval(function(){
 	
-	balonFootballs(balontelli);
+	footballClick(balontelli);
 	
 }, 5000);
