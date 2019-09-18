@@ -7,7 +7,7 @@ function footballClick(number){
 
 var balontelli = 0;
 
-function buyBalon(){
+function buyBalonTelli(){
     var balontelliCost = Math.floor(15 * Math.pow(1.15,balontelli));     //works out the cost of this cursor
     if(footballs >= balontelliCost){                                   //checks that the player can afford the cursor
         balontelli = balontelli + 1;                                   //increases number of cursors
