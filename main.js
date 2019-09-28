@@ -1,26 +1,23 @@
-var footballs = 0;
+const wallet = Map({GOLD: 0});
+const expensesLedger = Map({GOLD: -5});
+const profitsLedger = Map({GOLD: 10, SILVER: 5, BRONZE: 2});
 
-function footballClick(number){
-    footballs = footballs + number;
-    document.getElementById("footballs").innerHTML = footballs;
-};
+const total = sum(wallet, expensesLedger, profitsLedger);
+total.get("GOLD");   // 10
+total.get("SILVER"); // 5
+total.get("BRONZE"); // 2
 
-var balontelli = 0;
+const ledgers = [wallet, expenses, profits];
+const total = sum(...ledgers);
 
-function buyBalon(){
-    var balonCost = Math.floor(15 * Math.pow(1.15,balontelli));     //works out the cost of this cursor
-    if(footballs >= balonCost){                                   //checks that the player can afford the cursor
-        balontelli = balontelli + 1;                                   //increases number of cursors
-    	footballs = footballs - balonCost;                          //removes the cookies spent
-        document.getElementById('balontelli').innerHTML = balontelli;  //updates the number of cursors for the user
-        document.getElementById('footballs').innerHTML = footballs;  //updates the number of cookies for the user
-    };
-    var nextCost = Math.floor(15 * Math.pow(1.15,balontelli));       //works out the cost of the next cursor
-    document.getElementById('balonCost').innerHTML = nextCost;  //updates the cursor cost for the user
-};
+const incomeFromSalesfolk = Map({GOLD: 2, INFLUENCE: 5});
+const newIncome = scale(incomeFromSalesFolk, state.numOfSalesfolk);
 
-window.setInterval(function(){
-	
-	footballClick(balontelli);
-	
-}, 5000);
+newIncome.get("GOLD");     // 10 * state.numOfSalesfolk
+newIncome.get("SILVER");   // 5 * state.numOfSalesfolk
+newIncome.get("BRONZE");     // 2 * state.numOfSalesfolk
+newIncome.get("INFLUENCE") // 5 * state.numOfSalesfolk
+
+const materialCost = Map({GOLD: -25, SILVER: -10, BRONZE: -5});
+const transportCost = Map({GOLD: -25});
+const goldCost = totalOf("GOLD", materialCost, transportCost); // -7
